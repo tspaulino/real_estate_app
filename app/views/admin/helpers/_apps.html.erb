@@ -1,0 +1,9 @@
+<ul>
+  <% dashboard = 'active' if params[:controller].include?('dashboard') %>
+  <li><%= link_to Typus::I18n.t("Dashboard"), admin_dashboard_path, :class => dashboard %></li>
+  <% admin_user.applications.each do |app| %>
+    <% klass = (@resource && Typus.application(app).include?(@resource.name)) ? 'active' : nil %>
+    <% controller = Typus.application(app).sort.first.tableize %>
+    <li><%= link_to Typus::I18n.t(app), { :controller => "/admin/#{controller}" }, { :class => klass } %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,29 @@
+<%
+  page_title = Typus::I18n.t("Edit %{resource}", :resource => @resource.model_name.human)
+  title(page_title)
+%>
+
+<% content_for :sidebar do %>
+  <% build_sidebar.present? ? build_sidebar : render("admin/templates/profile_sidebar") %>
+<% end %>
+
+<h2>
+  <%= page_title %>
+</h2>
+
+<%= display_link_to_previous %>
+<%= display_flash_message %>
+<%= render 'edit' %>
+
+<%
+  options = { :action => "update",
+              :id => @item.id ,
+              :back_to => params[:back_to],
+              :resource => params[:resource],
+              :resource_id => params[:resource_id] }
+  button = Typus::I18n.t("Save %{resource}", :resource => @resource.model_name.human)
+%>
+
+<%= render :partial => 'form', :locals => { :options => options, :button => button } %>
+
+<%= raw typus_relationships %>

@@ -1,0 +1,34 @@
+<%
+  page_title = @resource.model_name.human.pluralize
+  title(page_title)
+%>
+
+<% content_for :sidebar, build_sidebar %>
+
+<h2>
+  <%= page_title %>
+</h2>
+
+<%= display_flash_message %>
+
+<%= render 'index' %>
+
+<ul class="predefined_filters">
+  <% predefined_filters.each do |filter, action, scope| %>
+    <li><%= link_to_unless_current Typus::I18n.t(filter), :action => action %> (<%= @resource.send(scope).count %>)</li>
+  <% end %>
+</ul>
+
+<% if (build_filters || search) %>
+  <div class="filters">
+    <%= build_filters %>
+    <%= search %>
+  </div>
+<% end %>
+
+<% if @items.any? -%>
+  <%= raw build_list(@resource, @fields, @items) %>
+  <%= will_paginate(@items, Typus.pagination) rescue nil %>
+<% else %>
+  <p><%= Typus::I18n.t("No %{resources} found.", :resources => @resource.model_name.human.pluralize.downcase) %></p>
+<% end %>

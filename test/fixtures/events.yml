@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  local: MyString
+  start_time: 2010-12-21 22:17:31
+  latitude: 9.99
+  longitude: 9.99
+
+two:
+  name: MyString
+  local: MyString
+  start_time: 2010-12-21 22:17:31
+  latitude: 9.99
+  longitude: 9.99

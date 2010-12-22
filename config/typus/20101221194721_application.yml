@@ -1,0 +1,14 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+User:
+  fields:
+    default: name, email, phone, fax
+    form: name, description, address, email, phone, fax, logo
+  order_by: 
+  relationships: 
+  filters: created_at
+  search: name
+  application: real_estate_app
+

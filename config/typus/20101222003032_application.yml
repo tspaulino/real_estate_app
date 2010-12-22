@@ -1,0 +1,14 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+RealEstate:
+  fields:
+    default: name, kind, value
+    form: name, description, address, kind, value
+  order_by: 
+  relationships: 
+  filters: created_at
+  search: name
+  application: real_estate_app
+

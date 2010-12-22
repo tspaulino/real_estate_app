@@ -1,0 +1,42 @@
+<%
+  page_title = Typus::I18n.t("Show %{resource}", :resource => @resource.model_name.human)
+  title(page_title)
+%>
+
+<% content_for :sidebar, build_sidebar %>
+
+<h2>
+  <%= page_title %>
+</h2>
+
+<%= display_flash_message %>
+<%= render 'show' %>
+
+<dl>
+<%- @fields.each do |field| -%>
+  <dt><%=h @resource.human_attribute_name(field.first) %></dt>
+  <%-
+    data_type = field.last
+    raw_data = @item.send(field.first)
+    data = case data_type
+           when :boolean
+             @resource.typus_boolean(field.first).invert[raw_data.to_s]
+           when :belongs_to
+             if raw_data
+               link_to raw_data.to_label, { :controller => raw_data.class.to_resource,
+                                            :action => raw_data.class.typus_options_for(:default_action_on_item),
+                                            :id => raw_data }
+             end
+           when :file
+             typus_file_preview(@item, field.first)
+           when :selector
+             @item.mapping(field.first)
+           else
+             raw_data
+           end
+  -%>
+  <dd><%= data.present? ? data : "&mdash;".html_safe %></dd>
+<%- end -%>
+</dl>
+
+<%= raw typus_relationships %>

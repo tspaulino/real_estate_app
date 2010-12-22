@@ -1,0 +1,17 @@
+<div class="box_relationships" id="<%= model_to_relate_as_resource %>">
+
+  <h2>
+    <%= model_to_relate.model_name.human.pluralize %>
+    <small><%= add_new %></small>
+  </h2>
+
+  <%= form %>
+
+  <% if @items.any? -%>
+    <%= table %>
+    <%= will_paginate(@items, Typus.pagination.merge(:anchor => model_to_relate.to_resource)) %>
+  <% else %>
+    <p><%= Typus::I18n.t("No %{resources} found.", :resources => model_to_relate.model_name.human.pluralize.downcase) %></p>
+  <% end %>
+
+</div>

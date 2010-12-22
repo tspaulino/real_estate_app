@@ -7,7 +7,7 @@ gem 'rails', '3.0.3'
 
 gem 'mysql2'
 gem 'typus', :git => 'https://github.com/fesplugas/typus.git'
-            
+gem 'paperclip'            
 
 # Use unicorn as the web server
 # gem 'unicorn'

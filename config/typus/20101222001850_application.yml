@@ -1,0 +1,23 @@
+# Typus Models Configuration File
+#
+# Use the README file as a reference to customize settings.
+
+Event:
+  fields:
+    default: name, local, start_time, latitude, longitude
+    form: name, local, start_time, latitude, longitude
+  order_by: 
+  relationships: 
+  filters: created_at
+  search: name
+  application: real_estate_app
+
+News:
+  fields:
+    default: title
+    form: title, teaser, text
+  order_by: 
+  relationships: 
+  filters: created_at
+  search: title
+  application: real_estate_app

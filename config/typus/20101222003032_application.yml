@@ -10,5 +10,5 @@ RealEstate:
   relationships: 
   filters: created_at
   search: name
-  application: real_estate_app
+  application: Real State CMS 
 

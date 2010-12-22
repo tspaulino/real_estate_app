@@ -10,7 +10,7 @@ Event:
   relationships: 
   filters: created_at
   search: name
-  application: Real State CMS 
+  application: Real Estate CMS 
 
 News:
   fields:
@@ -20,4 +20,4 @@ News:
   relationships: 
   filters: created_at
   search: title
-  application: Real State CMS 
+  application: Real Estate CMS 

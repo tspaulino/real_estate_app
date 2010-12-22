@@ -2,13 +2,13 @@
 #
 # Use the README file as a reference to customize settings.
 
-User:
+Image:
   fields:
-    default: name, email, phone, fax
-    form: name, description, address, email, phone, fax, logo
-  order_by: 
-  relationships: 
+    default: title, image, caption
+    form: title, image, caption
+  order_by: title 
+  relationships:  
   filters: created_at
-  search: name
+  search: title
   application: Real Estate CMS
 

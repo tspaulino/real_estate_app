@@ -7,8 +7,8 @@ RealEstate:
     default: name, kind, value
     form: name, description, address, kind, value
   order_by: 
-  relationships: 
+  relationships: images 
   filters: created_at
   search: name
-  application: Real State CMS 
+  application: Real Estate CMS 
 

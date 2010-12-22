@@ -6,6 +6,14 @@ GIT
       render_inheritable
       will_paginate (~> 3.0.pre2)
 
+GIT
+  remote: https://github.com/thoughtbot/paperclip.git
+  revision: 5eaadd2ceed193d7db4bcb2dc4f1c1d527d751a2
+  specs:
+    paperclip (2.3.8)
+      activerecord
+      activesupport
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -83,9 +91,6 @@ GEM
     mime-types (1.16)
     mysql2 (0.2.6)
     nokogiri (1.4.4)
-    paperclip (2.3.3)
-      activerecord
-      activesupport
     polyglot (0.3.1)
     rack (1.2.1)
     rack-mount (0.6.13)
@@ -147,7 +152,7 @@ DEPENDENCIES
   database_cleaner
   launchy
   mysql2
-  paperclip
+  paperclip!
   rails (= 3.0.3)
   rspec-rails (>= 2.0.0)
   spork

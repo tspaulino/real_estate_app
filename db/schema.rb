@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101222002954) do
+ActiveRecord::Schema.define(:version => 20101222230801) do
 
   create_table "admin_users", :force => true do |t|
     t.string   "first_name",       :default => "",    :null => false
@@ -34,6 +34,18 @@ ActiveRecord::Schema.define(:version => 20101222002954) do
     t.datetime "start_time"
     t.decimal  "latitude",   :precision => 10, :scale => 0
     t.decimal  "longitude",  :precision => 10, :scale => 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "images", :force => true do |t|
+    t.string   "title"
+    t.string   "image_file_name"
+    t.integer  "image_file_size"
+    t.string   "image_content_type"
+    t.text     "caption"
+    t.string   "imageable_type"
+    t.integer  "imageable_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
